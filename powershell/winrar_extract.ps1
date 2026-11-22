@@ -6,7 +6,7 @@
 # Loading env
 # -------------------------------------------------
 
-$envFilePath = Join-Path $PSScriptRoot ".env"
+$envFilePath = Join-Path $PSScriptRoot "\..\env"
 
 if (Test-Path $envFilePath) {
     Get-Content $envFilePath | ForEach-Object {
@@ -71,7 +71,7 @@ foreach ($archive in $archives) {
     # However, how it reads them depends on complexity:
     # $($expression): This is a subexpression. It is required when you need to access a property or method of an object inside a string 
     # (e.g., "$($archive.Name)" or "$($archive.FullName)").
-    Write-Host "Extracting $($archive.Name) -> $destination" -ForegroundColor 
+    Write-Host "Extracting $($archive.Name) -> $destination" -ForegroundColor Cyan
     
     # Ensure destinaion exists
     if (-not(Test-Path $destination)) {
