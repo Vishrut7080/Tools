@@ -6,7 +6,7 @@
 # Loading env
 # -------------------------------------------------
 
-$envFilePath = Join-Path $PSScriptRoot "\..\env"
+$envFilePath = Join-Path $PSScriptRoot "\..\.env"
 
 if (Test-Path $envFilePath) {
     Get-Content $envFilePath | ForEach-Object {
